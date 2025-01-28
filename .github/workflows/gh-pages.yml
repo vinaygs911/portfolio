@@ -27,7 +27,7 @@ jobs:
       run: npm install --loglevel verbose  # Adding verbose logging for more details
 
     - name: Build Angular project
-      run: npm run build --prod
+      run: npx ng build --prod --base-href "https://vinaygs911.github.io/portfolio/"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
