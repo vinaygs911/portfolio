@@ -27,4 +27,8 @@ jobs:
         run: ng build --prod --base-href "https://vinaygs911.github.io/portfolio/"
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages  # This is the branch you want to deploy to
+          folder: dist/vinaygsmakam-me  # This is where the build files are located
