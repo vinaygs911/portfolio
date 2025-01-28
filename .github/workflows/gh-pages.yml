@@ -18,9 +18,6 @@ jobs:
       with:
         node-version: '18.x'  # Ensure Node.js 18.x is being used
 
-    - name: Clear npm cache
-      run: npm cache clean --force
-
     - name: Authenticate with npm
       run: |
         echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
