@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: '18.x'  # Ensure Node.js 18.x is being used
 
+      - name: Authenticate with npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc  # Authenticate using npm token
+
       - name: Install dependencies
         run: npm install  # Install dependencies from package.json (including Angular CLI)
 
