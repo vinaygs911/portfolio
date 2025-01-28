@@ -18,18 +18,17 @@ jobs:
       with:
         node-version: '18.x'  # Ensure Node.js 18.x is being used
 
-    - name: Authenticate with npm
-      run: |
-        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-        cat ~/.npmrc  # Debugging step to check the contents of the .npmrc file
-
     - name: Install dependencies
       run: npm install --loglevel verbose  # Adding verbose logging for more details
 
     - name: Build Angular project
-      run: npx ng build --configuration production --base-href "https://vinaygs911.github.io/portfolio/"
+      run: npm run build -- --configuration production --base-href "https://vinaygs911.github.io/portfolio/"
+
+    - name: Verify build output
+      run: ls -la dist/vinaygsmakam-me  # List the contents of the build output directory
 
     - name: Deploy to GitHub Pages
+      if: success() && steps.verify.outputs.count > 0  # Ensure deployment only happens if the previous step is successful and files are present
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Personal access token for authorization
