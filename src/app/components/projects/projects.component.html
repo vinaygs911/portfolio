@@ -1,10 +1,24 @@
-<div style="max-width: 600px; margin: auto;">
-    <h2>Projects Overview</h2>
-    <canvas
-      baseChart
-      [data]="barChartData"
-      [options]="barChartOptions"
-      chartType="bar">
-    </canvas>
-  </div>
+<section class="py-16 px-8 bg-white text-center">
+    <h2 class="text-3xl font-bold text-gray-800">My Projects</h2>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div *ngFor="let project of projects" class="bg-gray-100 p-4 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold">{{ project.name }}</h3>
+        <p class="text-gray-600 mt-2">{{ project.description }}</p>
+        <div class="mt-4">
+          <span
+            *ngFor="let tech of project.techStack"
+            class="inline-block bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs mr-2"
+          >
+            {{ tech }}
+          </span>
+        </div>
+        <a
+          [href]="project.link"
+          target="_blank"
+          class="mt-4 inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          >View Project</a
+        >
+      </div>
+    </div>
+  </section>
   

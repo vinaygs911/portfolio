@@ -1,31 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css'],
 })
-export class SkillsComponent {
-  // Data for the chart
-  public radarChartLabels: string[] = ['Angular', 'TypeScript', 'RxJS', 'HTML5', 'CSS3', 'Node.js'];
+export class SkillsComponent implements OnInit {
+  skills: any[] = [];
 
-  public radarChartData = {
-    datasets: [
-      {
-        label: 'Skill Proficiency (%)',
-        data: [90, 85, 80, 95, 90, 75], // Skill values
-        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-        borderColor: 'rgba(54, 162, 235, 1)',
-      },
-    ],
-  };
+  constructor(private dataService: DataService) {}
 
-  public radarChartOptions = {
-    responsive: true,
-    scales: {
-      r: {
-        beginAtZero: true,
-      },
-    },
-  };
+  ngOnInit(): void {
+    this.skills = this.dataService.resumeData.skills;
+  }
 }

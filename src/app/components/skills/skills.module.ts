@@ -10,6 +10,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [SkillsComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), NgChartsModule],
+  imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class SkillsModule {}

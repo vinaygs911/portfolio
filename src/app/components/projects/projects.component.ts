@@ -1,32 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
 })
-export class ProjectsComponent {
-  public barChartLabels: string[] = ['Dashboard', 'E-Commerce', 'Inventory'];
+export class ProjectsComponent implements OnInit {
+  projects: any[] = [];
 
-  public barChartData = {
-    labels: this.barChartLabels,
-    datasets: [
-      {
-        label: 'Project Complexity',
-        data: [80, 70, 65], // Complexity values for each project
-        backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)'],
-        borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
-        borderWidth: 1,
-      },
-    ],
-  };
+  constructor(private dataService: DataService) {}
 
-  public barChartOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-      },
-    },
-  };
+  ngOnInit(): void {
+    this.projects = this.dataService.resumeData.projects;
+  }
 }
