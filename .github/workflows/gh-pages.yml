@@ -3,41 +3,30 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - master  # Trigger deployment on push to the master branch
+      - master  # Trigger on pushing to the main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3  # Use the latest version
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js (v18.x)
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18.x'  # Ensure Node.js 18.x is being used
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'  # Ensure Node.js 18.x is being used
 
-      - name: Authenticate with npm
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+    - name: Install dependencies
+      run: npm install
 
-      - name: Authenticate with npm alternative
-        run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+    - name: Build Angular project
+      run: npm run build --prod
 
-      - name: Install dependencies
-        run: npm install  # Install dependencies from package.json (including Angular CLI)
-
-      - name: Check if Angular CLI is installed
-        run: |
-          echo "Checking if Angular CLI is installed"
-          npx ng version  # Check if npx can find Angular CLI
-
-      - name: Build the Angular app
-        run: npx ng build --prod --base-href "https://vinaygs911.github.io/portfolio/"  # Use npx to run Angular CLI locally
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}  # Token for GitHub Pages deployment
-          branch: gh-pages  # Deploy to the gh-pages branch
-          folder: dist/vinaygsmakam-me  # Folder containing the build output
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authorization
+        branch: gh-pages  # The branch to deploy to
+        folder: dist/portfolio  # The folder containing the build output
