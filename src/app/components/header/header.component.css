@@ -1,0 +1,13 @@
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1976d2;
+    color: white;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+  }
+  
