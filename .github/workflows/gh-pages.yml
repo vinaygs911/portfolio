@@ -25,10 +25,16 @@ jobs:
       run: npm run build -- --configuration production --base-href "https://vinaygs911.github.io/portfolio/"
 
     - name: Verify build output
-      run: ls -la dist/vinaygsmakam-me  # List the contents of the build output directory
+      run: |
+        if [ -d "dist/vinaygsmakam-me" ] && [ -f "dist/vinaygsmakam-me/index.html" ]; then
+          echo "Build output verified."
+        else
+          echo "Build output verification failed."
+          exit 1
+        fi
 
     - name: Deploy to GitHub Pages
-      if: success() && steps.verify.outputs.count > 0  # Ensure deployment only happens if the previous step is successful and files are present
+      if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Personal access token for authorization
