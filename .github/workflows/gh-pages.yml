@@ -32,6 +32,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        personal_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authorization
+        personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Personal access token for authorization
         branch: gh-pages  # The branch to deploy to
         folder: dist/vinaygsmakam-me  # The folder containing the build output
