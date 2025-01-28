@@ -19,7 +19,9 @@ jobs:
         node-version: '18.x'  # Ensure Node.js 18.x is being used
 
     - name: Authenticate with npm
-      run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      run: |
+        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+        cat ~/.npmrc  # Debugging step to check the contents of the .npmrc file
 
     - name: Install dependencies
       run: npm install
