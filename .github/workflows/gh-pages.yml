@@ -20,11 +20,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install -g @angular/cli  # Install Angular CLI globally
-          npm install  # Install project dependencies
+          npm install  # Install project dependencies (including Angular CLI locally)
 
       - name: Build the Angular app
-        run: ng build --prod --base-href "https://vinaygs911.github.io/portfolio/"
+        run: npx ng build --prod --base-href "https://vinaygs911.github.io/portfolio/"  # Using npx to avoid global install
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
