@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -6,10 +6,25 @@ import { DataService } from '../../services/data.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
 })
-export class AboutComponent {
-  summary: string = '';
+export class AboutComponent implements OnInit {
+  name = '';
+  profilePicture = '';
+  headline = '';
+  summary = '';
+  certifications: any[] = [];
+  awards: any[] = [];
+  languages: any[] = [];
 
-  constructor(private dataService: DataService) {
-    this.summary = this.dataService.resumeData.summary;
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    const data = this.dataService.resumeData;
+    this.name = data.name;
+    this.profilePicture = data.profilePicture;
+    this.headline = data.headline;
+    this.summary = data.summary;
+    this.certifications = data.certifications || [];
+    this.awards = data.awards || [];
+    this.languages = data.languages || [];
   }
 }

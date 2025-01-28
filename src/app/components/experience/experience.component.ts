@@ -1,13 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
+interface Experience {
+  role: string;
+  company: string;
+  duration: string;
+  achievements: string[];
+}
+
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css'],
 })
 export class ExperienceComponent implements OnInit {
-  experience: any[] = [];
+  experience: Experience[] = [];
 
   constructor(private dataService: DataService) {}
 

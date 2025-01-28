@@ -1,12 +1,32 @@
-<section class="py-16 px-8 bg-gray-100">
-    <h2 class="text-3xl font-bold text-gray-800 text-center">Experience</h2>
-    <div class="mt-8">
-      <div *ngFor="let exp of experience" class="mb-8 border-b pb-4">
-        <h3 class="text-xl font-bold">{{ exp.role }}</h3>
-        <p class="text-gray-600">{{ exp.company }} | {{ exp.duration }}</p>
-        <ul class="list-disc ml-8 mt-2">
-          <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
-        </ul>
+<section class="relative">
+    <div class="py-16 px-8 max-w-screen-xl mx-auto">
+      <!-- Section Title -->
+      <!-- <h2 class="text-3xl font-bold text-center mb-12">
+        Experience
+      </h2> -->
+  
+      <!-- Experience Cards -->
+      <div class="space-y-8">
+        <div
+          *ngFor="let exp of experience; let i = index"
+          class="flex items-start space-x-6 experience-card"
+        >
+          <!-- Icon -->
+          <div class="icon-wrapper">
+            <i class="fas fa-briefcase"></i>
+          </div>
+  
+          <!-- Experience Details -->
+          <div>
+            <h3 class="text-xl font-bold">{{ exp.role }}</h3>
+            <h4 class="text-gray-400">{{ exp.company }} | {{ exp.duration }}</h4>
+            <ul class="mt-2 space-y-1 list-disc pl-5">
+              <li *ngFor="let achievement of exp.achievements">
+                {{ achievement }}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>

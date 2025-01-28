@@ -23,4 +23,8 @@ export class ContactComponent {
       github: data.github,
     };
   }
+
+  sendMessage() {
+    alert('Message sent successfully! 🚀');
+  }
 }

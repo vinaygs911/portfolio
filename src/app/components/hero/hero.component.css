@@ -1,3 +1,65 @@
+/* Section Styling */
 section {
-    background-image: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+    height: 100vh; /* Full-screen height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom right, #0a0e27, #0d1338); /* Night sky gradient */
+    padding: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
   }
+  
+  /* Hero Title */
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff; /* Bright white for contrast */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glowing effect */
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+  
+  /* Hero Subtitle */
+  p {
+    font-size: 1.2rem;
+    color: #cbd5e1; /* Muted light gray for text */
+    margin-top: 1rem;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  /* Call-to-Action Button */
+  a {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #3b82f6, #2563eb); /* Vibrant gradient */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.6); /* Subtle glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+  
+  a:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.8); /* Enhanced glow */
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

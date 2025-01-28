@@ -1,16 +1,42 @@
-<section class="py-16 px-8 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold text-gray-800">My Skills</h2>
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div *ngFor="let skill of skills" class="text-center">
-        <h3 class="text-xl font-bold">{{ skill.name }}</h3>
-        <p class="text-gray-600">{{ skill.level }}%</p>
-        <div class="w-full bg-gray-300 rounded-full h-4 mt-2">
-          <div
-            class="bg-blue-600 h-4 rounded-full"
-            [style.width]="skill.level + '%'">
+<section class="relative animate-on-scroll">
+    <div class="py-16 px-8 max-w-screen-xl mx-auto">
+      <!-- Section Title -->
+
+      <p class="text-lg text-gray-300 text-center mb-8 animate-delayed-fade-2">
+        Here are some of the key skills I have mastered over the years.
+      </p>
+  
+      <!-- Skills Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          *ngFor="let skill of skills; let i = index"
+          class="skill-card animate-slide-up"
+          [style.animationDelay]="i * 0.2 + 's'"
+        >
+          <!-- Skill Header -->
+          <div class="flex items-center space-x-3">
+            <i [class]="skill.icon" class="text-blue-400 text-2xl"></i>
+            <h3 class="text-lg font-bold text-white">{{ skill.name }}</h3>
           </div>
+  
+          <!-- Skill Bar Container -->
+          <div class="w-full bg-gray-600 rounded-full h-5 mt-2 relative">
+            <!-- Skill Bar -->
+            <div
+              class="skill-bar bg-gradient-to-r from-blue-500 to-blue-700 h-full rounded-full"
+              [ngStyle]="{ width: skill.level + '%' }"
+            ></div>
+            <span class="absolute right-3 top-0 text-sm text-white">
+              {{ skill.level }}%
+            </span>
+          </div>
+  
+          <!-- Skill Level Label -->
+          <p class="text-xs text-gray-400 mt-1 text-right">
+            {{ getSkillLevel(skill.level) }}
+          </p>
         </div>
       </div>
     </div>
-</section>
+  </section>
   

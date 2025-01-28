@@ -1,3 +1,42 @@
+<div class="sky-night-background">
+  <!-- Twinkling Stars -->
+  <div
+    *ngFor="let star of stars"
+    class="star"
+    [style.left]="star.x"
+    [style.top]="star.y"
+    [style.width]="star.size"
+    [style.height]="star.size"
+    [style.animationDelay]="star.delay"
+  ></div>
+
+  <!-- Shooting Stars -->
+  <div
+    *ngFor="let shootingStar of shootingStars"
+    class="shooting-star"
+    [style.left]="shootingStar.x"
+    [style.top]="shootingStar.y"
+    [style.animationDelay]="shootingStar.delay"
+  ></div>
+
+  <!-- Rockets -->
+  <div
+    *ngFor="let rocket of rockets"
+    class="rocket"
+    [style.left]="rocket.x"
+    [style.color]="rocket.color"
+  >
+    <i class="fas fa-rocket"></i>
+  </div>
+</div>
+
+<!-- Header -->
 <app-header></app-header>
-<router-outlet></router-outlet>
+
+<!-- Main Content -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
 <app-footer></app-footer>

@@ -1,4 +1,76 @@
-<section class="py-16 px-8 bg-white text-center">
-    <h2 class="text-3xl font-bold text-gray-800">About Me</h2>
-    <p class="mt-4 text-gray-600">{{ summary }}</p>
-</section>
+<section class="relative py-16 px-8 max-w-screen-xl mx-auto bg-night-sky">
+    <!-- Profile Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+      <!-- Profile Image -->
+      <div class="text-center animate-fade-in">
+        <img
+          [src]="profilePicture"
+          alt="Profile Picture"
+          class="w-48 h-48 rounded-full mx-auto shadow-lg animate-zoom"
+        />
+        <h2 class="text-3xl font-bold mt-4 text-gray-100 animate-slide-up">
+          {{ name }}
+        </h2>
+        <p class="text-lg text-gray-400 italic animate-slide-up">
+          {{ headline }}
+        </p>
+      </div>
+  
+      <!-- Summary -->
+      <div class="animate-slide-up">
+        <h3 class="text-2xl font-bold text-gray-200 mb-4">About Me</h3>
+        <p class="text-gray-300 leading-relaxed">
+          {{ summary }}
+        </p>
+      </div>
+    </div>
+  
+    <!-- Additional Sections -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Certifications -->
+      <div *ngIf="certifications.length" class="animate-fade-in">
+        <h3 class="text-xl font-bold text-gray-200 mb-4">Certifications</h3>
+        <ul class="space-y-4">
+          <li *ngFor="let cert of certifications" class="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105">
+            <h4 class="font-bold text-gray-300">{{ cert.name }}</h4>
+            <p class="text-gray-400 text-sm">
+              Issuer: {{ cert.issuer }} | Date: {{ cert.date }}
+            </p>
+            <p class="text-gray-500">
+              {{ cert.summary }}
+            </p>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Awards -->
+      <div *ngIf="awards.length" class="animate-fade-in">
+        <h3 class="text-xl font-bold text-gray-200 mb-4">Awards</h3>
+        <ul class="space-y-4">
+          <li *ngFor="let award of awards" class="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105">
+            <h4 class="font-bold text-gray-300">{{ award.title }}</h4>
+            <p class="text-gray-400 text-sm">
+              Awarded By: {{ award.awarder }} | Date: {{ award.date }}
+            </p>
+            <p class="text-gray-500">
+              {{ award.summary }}
+            </p>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Languages -->
+      <div *ngIf="languages.length" class="animate-fade-in">
+        <h3 class="text-xl font-bold text-gray-200 mb-4">Languages</h3>
+        <ul class="space-y-4">
+          <li *ngFor="let lang of languages" class="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105">
+            <h4 class="font-bold text-gray-300">{{ lang.name }}</h4>
+            <p class="text-gray-400">
+              Proficiency Level: {{ lang.level }}/5
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  

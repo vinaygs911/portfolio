@@ -6,13 +6,16 @@ import { Injectable } from '@angular/core';
 export class DataService {
   public resumeData = {
     name: 'Vinay G S',
+    profilePicture: 'https://storage.rxresu.me/cm67v5vt80gpy7bnnv35pcz2d/pictures/yc377zkbp2bjid3nlzunssgu.jpg',
     headline: 'Frontend Developer | Angular Expert',
     email: 'makamvinayjbs@gmail.com',
     phone: '+918867506453',
     location: 'Bengaluru, IN',
     linkedin: 'https://www.linkedin.com/in/gsvinaymakam/',
     github: 'https://github.com/vinaygs911',
-    summary: `Frontend Developer with 8+ years of experience specializing in Angular, TypeScript, and modern web technologies.`,
+    summary: `Frontend Developer with 8+ years of experience specializing in Angular, TypeScript, and modern web technologies. Passionate about creating seamless user experiences and building scalable applications.`,
+
+    // Skills
     skills: [
       { name: 'Angular', level: 90 },
       { name: 'TypeScript', level: 85 },
@@ -20,6 +23,8 @@ export class DataService {
       { name: 'HTML5 & CSS3', level: 90 },
       { name: 'Node.js', level: 75 },
     ],
+
+    // Projects
     projects: [
       {
         name: 'Healthcare Dashboard',
@@ -34,6 +39,8 @@ export class DataService {
         link: '#',
       },
     ],
+
+    // Experience
     experience: [
       {
         company: 'Siemens Healthcare',
@@ -45,33 +52,53 @@ export class DataService {
         ],
       },
       {
-        company: 'Nous Infosystems',
+        company: 'Nous Infosystem',
         role: 'Software Engineer',
-        duration: '2020 - 2021',
+        duration: '2019 - 2021',
         achievements: [
-          'Improved application performance by 20%.',
-          'Delivered client-side optimizations with TypeScript.',
+          'Developed dynamic dashboards for enterprise-level applications.',
+          'Worked on cross-team collaboration to integrate new features.',
         ],
       },
     ],
+
+    // Certifications
     certifications: [
       {
         name: 'Angular Advanced Development',
         issuer: 'Udemy',
         date: 'March 2023',
+        summary: 'Mastered advanced Angular concepts, including state management and RxJS.',
       },
       {
-        name: 'Web Development Bootcamp',
+        name: 'Full Stack Web Development',
         issuer: 'Coursera',
-        date: 'December 2022',
+        date: 'October 2021',
+        summary: 'Gained expertise in frontend and backend technologies including Angular and Node.js.',
       },
     ],
+
+    // Awards
     awards: [
       {
         title: 'Employee of the Month',
-        company: 'Siemens Healthcare',
+        awarder: 'Siemens Healthcare',
         date: 'March 2023',
+        summary: 'Recognized for exceptional contribution to the Healthcare Dashboard project.',
       },
+      {
+        title: 'Best Innovator Award',
+        awarder: 'Infosys',
+        date: 'July 2020',
+        summary: 'Awarded for implementing a workflow automation solution, reducing manual efforts by 25%.',
+      },
+    ],
+
+    // Languages
+    languages: [
+      { name: 'English', level: 5 }, // Proficient
+      { name: 'Hindi', level: 4 }, // Advanced
+      { name: 'Kannada', level: 5 }, // Native/Bilingual
     ],
   };
 }
