@@ -3,7 +3,7 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - master  # Trigger on pushing to the main branch
+      - master
 
 jobs:
   deploy:
@@ -16,10 +16,10 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18.x'  # Ensure Node.js 18.x is being used
+        node-version: '18.x'
 
     - name: Install dependencies
-      run: npm install --loglevel verbose  # Adding verbose logging for more details
+      run: npm install --loglevel verbose
 
     - name: Build Angular project
       run: npm run build -- --configuration production --base-href "https://vinaygs911.github.io/portfolio/"
@@ -37,6 +37,6 @@ jobs:
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
-        personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Personal access token for authorization
-        branch: gh-pages  # The branch to deploy to
-        folder: dist/vinaygsmakam-me  # The folder containing the build output
+        personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: dist/vinaygsmakam-me
