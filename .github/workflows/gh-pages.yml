@@ -3,7 +3,7 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - master  # Trigger on pushing to the main branch
+      - main  # Trigger on pushing to the main branch
 
 jobs:
   deploy:
@@ -18,6 +18,9 @@ jobs:
       with:
         node-version: '18.x'  # Ensure Node.js 18.x is being used
 
+    - name: Authenticate with npm
+      run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
     - name: Install dependencies
       run: npm install
 
@@ -29,4 +32,4 @@ jobs:
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authorization
         branch: gh-pages  # The branch to deploy to
-        folder: dist/portfolio  # The folder containing the build output
+        folder: dist/vinaygsmakam-me  # The folder containing the build output
