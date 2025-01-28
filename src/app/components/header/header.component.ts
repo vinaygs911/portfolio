@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  menuOpen: boolean = false;
 
+  // Toggle menu visibility
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  // Close menu when an item is clicked
+  closeMenu() {
+    this.menuOpen = false;
+  }
 }

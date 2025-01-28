@@ -12,35 +12,28 @@
       <li><a routerLink="/contact" class="hover:text-gray-300">Contact</a></li>
     </ul>
 
-    <!-- Hamburger Icon -->
-    <div class="md:hidden">
-      <button id="menu-toggle" class="text-white focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-    </div>
+    <!-- Hamburger Menu for Mobile -->
+    <button
+      (click)="toggleMenu()"
+      class="md:hidden text-white focus:outline-none"
+      aria-label="Toggle Menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
   </nav>
 
-  <!-- Mobile Navigation -->
-  <ul
+  <!-- Mobile Menu -->
+  <div
+    *ngIf="menuOpen"
     id="mobile-menu"
-    class="hidden flex-col space-y-4 bg-black bg-opacity-80 p-4 text-center text-white absolute w-full top-16 left-0"
+    class="mobile-menu bg-gradient-to-b from-[#0a0e27] to-[#0d1338] text-white w-full flex flex-col items-center space-y-4 py-4"
   >
-    <li><a routerLink="/about" class="hover:text-gray-300">About</a></li>
-    <li><a routerLink="/skills" class="hover:text-gray-300">Skills</a></li>
-    <li><a routerLink="/projects" class="hover:text-gray-300">Projects</a></li>
-    <li><a routerLink="/experience" class="hover:text-gray-300">Experience</a></li>
-    <li><a routerLink="/contact" class="hover:text-gray-300">Contact</a></li>
-  </ul>
+    <a routerLink="/about" (click)="closeMenu()" class="hover:text-gray-300">About</a>
+    <a routerLink="/skills" (click)="closeMenu()" class="hover:text-gray-300">Skills</a>
+    <a routerLink="/projects" (click)="closeMenu()" class="hover:text-gray-300">Projects</a>
+    <a routerLink="/experience" (click)="closeMenu()" class="hover:text-gray-300">Experience</a>
+    <a routerLink="/contact" (click)="closeMenu()" class="hover:text-gray-300">Contact</a>
+  </div>
 </header>
-
-<script>
-  // Toggle Mobile Menu
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
