@@ -1,37 +1,31 @@
-name: Deploy to GitHub Pages
+name: Deploy Angular App to GitHub Pages
 
 on:
   push:
     branches:
-      - master  # Trigger deployment on push to master
+      - master  # or main, depending on your branch name
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    # Checkout the repository code
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    # Set up Node.js for the build process
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'  # Or use your preferred Node.js version
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    # Install dependencies
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    # Build the Angular project (production build)
-    - name: Build Angular project
-      run: npm run build --prod --base-href "https://vinaygs911.github.io/portfolio/"
+      - name: Build the Angular app
+        run: ng build --prod --base-href "https://vinaygs911.github.io/portfolio/"
 
-    # Deploy to GitHub Pages
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages  # The branch to deploy to
-        folder: dist/portfolio  # The folder to deploy (adjust based on the output path in angular.json)
-        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages  # This is the branch you want to deploy to
+          folder: dist/vinaygsmakam-me  # This is where the build files are located
