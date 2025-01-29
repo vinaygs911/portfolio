@@ -7,35 +7,41 @@ export class DataService {
   public resumeData = {
     name: 'Vinay G S',
     profilePicture: 'https://storage.rxresu.me/cm67v5vt80gpy7bnnv35pcz2d/pictures/yc377zkbp2bjid3nlzunssgu.jpg',
-    headline: 'Frontend Developer | Angular Expert',
+    headline: 'Angular Developer | Delivering Dynamic and High-Performance Web Experiences',
     email: 'makamvinayjbs@gmail.com',
-    phone: '+918867506453',
     location: 'Bengaluru, IN',
     linkedin: 'https://www.linkedin.com/in/gsvinaymakam/',
     github: 'https://github.com/vinaygs911',
-    summary: `Frontend Developer with 8+ years of experience specializing in Angular, TypeScript, and modern web technologies. Passionate about creating seamless user experiences and building scalable applications.`,
+    portfolio: 'https://vinaygs911.github.io/portfolio/',
+    summary: `Frontend Developer with 8+ years of experience specializing in Angular, TypeScript, and modern web technologies. Skilled in RxJS for reactive programming, NgRx Store for state management, and Angular Material for intuitive UI design. Proficient in building scalable SPAs with reusable components, lazy loading, and modular architecture. Experienced in integrating RESTful APIs, optimizing performance, and delivering seamless user experiences. Adept at Agile development and staying updated with the latest Angular trends.`,
 
     // Skills
     skills: [
-      { name: 'Angular', level: 90 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'RxJS', level: 80 },
-      { name: 'HTML5 & CSS3', level: 90 },
-      { name: 'Node.js', level: 75 },
+      { name: 'Angular & TypeScript', level: 90 },
+      { name: 'RxJS & NgRx', level: 85 },
+      { name: 'HTML5, CSS3, JavaScript', level: 90 },
+      { name: 'Node.js & RESTful APIs', level: 80 },
+      { name: 'Git, GitHub & Database Management', level: 75 },
     ],
 
     // Projects
     projects: [
       {
-        name: 'Healthcare Dashboard',
-        description: 'Built a real-time healthcare dashboard using Angular, RxJS, and NgRx.',
-        techStack: ['Angular', 'RxJS', 'NgRx', 'TypeScript'],
+        name: 'Real-Time Dashboard for Healthcare Analytics',
+        description: 'Developed a real-time healthcare analytics dashboard to monitor patient metrics, using Angular, RxJS, and NgRx for state management.',
+        techStack: ['Angular', 'RxJS', 'NgRx', 'Node.js', 'MongoDB'],
         link: '#',
       },
       {
-        name: 'E-Commerce App',
-        description: 'Developed an e-commerce platform with Angular and Firebase.',
-        techStack: ['Angular', 'Firebase', 'TypeScript'],
+        name: 'E-Commerce Web Application',
+        description: 'Built a scalable e-commerce platform with Angular, integrating payment gateways and real-time inventory management using Firebase.',
+        techStack: ['Angular', 'TypeScript', 'Firebase', 'RESTful APIs'],
+        link: '#',
+      },
+      {
+        name: 'Inventory Management System',
+        description: 'Designed a fully functional inventory management system that tracks stock, orders, and sales using Angular and Node.js.',
+        techStack: ['Angular', 'Node.js', 'MySQL'],
         link: '#',
       },
     ],
@@ -43,38 +49,55 @@ export class DataService {
     // Experience
     experience: [
       {
-        company: 'Siemens Healthcare',
+        company: 'Siemens Healthcare (P) Ltd',
         role: 'Senior Software Engineer',
-        duration: '2021 - Present',
+        duration: 'March 2021 - Present',
         achievements: [
-          'Optimized clinical workflows by 30% using Angular and RxJS.',
-          'Led a team of 5 to build scalable healthcare apps.',
+          'Developed healthcare applications using Angular, RxJS, and NgRx, enhancing real-time data processing.',
+          'Led performance optimizations, improving user experience and application efficiency in a clinical environment.',
         ],
+        link: 'https://www.siemens-healthineers.com/',
       },
       {
-        company: 'Nous Infosystem',
+        company: 'Nous Infosystems',
         role: 'Software Engineer',
-        duration: '2019 - 2021',
+        duration: 'March 2020 - February 2021',
         achievements: [
-          'Developed dynamic dashboards for enterprise-level applications.',
-          'Worked on cross-team collaboration to integrate new features.',
+          'Built enterprise applications with Angular and TypeScript, improving client-side performance and scalability.',
+          'Integrated RESTful APIs and optimized front-end components for seamless user interactions.',
         ],
+        link: 'https://www.nousinfosystems.com/',
+      },
+      {
+        company: 'Anthology (formerly Campus Management International (P) Ltd)',
+        role: 'Senior Associate Software Engineer',
+        duration: 'December 2018 - March 2020',
+        achievements: [
+          'Developed web applications using Angular, TypeScript, and RxJS for the education sector.',
+          'Optimized UI performance, reducing load times and enhancing user experience.',
+        ],
+        link: 'https://www.anthology.com/en-in',
       },
     ],
 
     // Certifications
     certifications: [
       {
-        name: 'Angular Advanced Development',
+        name: 'Certificate in Angular Development',
         issuer: 'Udemy',
         date: 'March 2023',
-        summary: 'Mastered advanced Angular concepts, including state management and RxJS.',
+        summary: 'Mastered Angular fundamentals and advanced concepts including state management with NgRx and RxJS.',
       },
+    ],
+
+    // Education
+    education: [
       {
-        name: 'Full Stack Web Development',
-        issuer: 'Coursera',
-        date: 'October 2021',
-        summary: 'Gained expertise in frontend and backend technologies including Angular and Node.js.',
+        institution: 'Channabasaveshwara Institute of Technology, Gubbi',
+        degree: "Bachelor's Degree (BE) in Computer Science",
+        date: 'September 2012 – June 2016',
+        summary: 'Graduated with a strong foundation in computer science, web technologies, and programming languages.',
+        link: 'https://www.cittumkur.org/',
       },
     ],
 
@@ -84,21 +107,19 @@ export class DataService {
         title: 'Employee of the Month',
         awarder: 'Siemens Healthcare',
         date: 'March 2023',
-        summary: 'Recognized for exceptional contribution to the Healthcare Dashboard project.',
+        summary: 'Recognized for delivering key projects on time, driving innovation, and fostering effective team collaboration.',
       },
       {
-        title: 'Best Innovator Award',
-        awarder: 'Infosys',
-        date: 'July 2020',
-        summary: 'Awarded for implementing a workflow automation solution, reducing manual efforts by 25%.',
+        title: 'Best Innovator of the Year',
+        awarder: 'Nous Infosystems',
+        date: 'February 2021',
+        summary: 'Awarded for demonstrating creative problem-solving and delivering innovative software solutions that improved operational efficiency.',
       },
     ],
 
     // Languages
     languages: [
-      { name: 'English', level: 5 }, // Proficient
-      { name: 'Hindi', level: 4 }, // Advanced
-      { name: 'Kannada', level: 5 }, // Native/Bilingual
+      { name: 'English', level: 4 }, // Advanced
     ],
   };
 }

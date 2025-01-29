@@ -9,7 +9,6 @@ import { DataService } from '../../services/data.service';
 export class ContactComponent {
   contactInfo = {
     email: '',
-    phone: '',
     linkedin: '',
     github: '',
   };
@@ -18,7 +17,6 @@ export class ContactComponent {
     const data = this.dataService.resumeData;
     this.contactInfo = {
       email: data.email,
-      phone: data.phone,
       linkedin: data.linkedin,
       github: data.github,
     };
