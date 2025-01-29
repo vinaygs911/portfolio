@@ -9,7 +9,6 @@ export class DataService {
     profilePicture: 'https://storage.rxresu.me/cm67v5vt80gpy7bnnv35pcz2d/pictures/yc377zkbp2bjid3nlzunssgu.jpg',
     headline: 'Angular Developer | Delivering Dynamic and High-Performance Web Experiences',
     email: 'makamvinayjbs@gmail.com',
-    phone: '+918867506453',
     location: 'Bengaluru, IN',
     linkedin: 'https://www.linkedin.com/in/gsvinaymakam/',
     github: 'https://github.com/vinaygs911',
