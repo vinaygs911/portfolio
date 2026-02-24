@@ -16,17 +16,17 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '22.x'
+        node-version: '20'
 
     - name: Install dependencies
-      run: npm install --legacy--peer-deps --loglevel verbose
+      run: npm ci
 
     - name: Build Angular project
       run: npm run build -- --configuration production --base-href "https://vinaygs911.github.io/portfolio/"
 
     - name: Verify build output
       run: |
-        if [ -d "dist/vinaygsmakam-me" ] && [ -f "dist/vinaygsmakam-me/index.html" ]; then
+        if [ -d "dist/demo" ] && [ -f "dist/demo/index.html" ]; then
           echo "Build output verified."
         else
           echo "Build output verification failed."
@@ -34,9 +34,8 @@ jobs:
         fi
 
     - name: Deploy to GitHub Pages
-      if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: dist/vinaygsmakam-me
+        publish_dir: dist/demo
