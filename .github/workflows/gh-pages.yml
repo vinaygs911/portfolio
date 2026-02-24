@@ -26,7 +26,7 @@ jobs:
 
     - name: Verify build output
       run: |
-        if [ -d "dist/demo" ] && [ -f "dist/demo/index.html" ]; then
+        if [ -d "dist/demo/browser" ] && [ -f "dist/demo/browser/index.html" ]; then
           echo "Build output verified."
         else
           echo "Build output verification failed."
@@ -38,4 +38,4 @@ jobs:
       with:
         personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: dist/demo
+        publish_dir: dist/demo/browser
