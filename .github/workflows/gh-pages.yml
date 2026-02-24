@@ -19,7 +19,7 @@ jobs:
         node-version: '22.x'
 
     - name: Install dependencies
-      run: npm install --loglevel verbose
+      run: npm install --legacy--peer-deps --loglevel verbose
 
     - name: Build Angular project
       run: npm run build -- --configuration production --base-href "https://vinaygs911.github.io/portfolio/"
